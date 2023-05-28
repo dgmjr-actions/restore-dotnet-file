@@ -1,4 +1,4 @@
-name: Download a file using dotnet-file
+name: Restore the dotnet-file tool
 author: David G. Moore, Jr., <david@dgmjr.io>
 description: Restores the dotnet-file tool
 branding:
@@ -9,6 +9,6 @@ runs:
   using: composite
   steps: 
     - uses: actions/checkout@v3
-    - id: Restore dotnet-file
+    - id: Ensure-DotNet-File-Is-Installed
+    - run: ./scrips/ensure-dotnet-file-is-installed.sh
       shell: bash
-      run: dotnet tool install -g dotnet-file 
