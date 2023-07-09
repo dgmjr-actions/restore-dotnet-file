@@ -1,0 +1,17 @@
+name: Download a file using dotnet-file
+author: David G. Moore, Jr., <david@dgmjr.io>
+description: Downloads global.json using the dotnet-file tool
+branding:
+   icon: file-plus
+   color: green
+
+runs:
+  using: composite
+  steps: 
+    - uses: actions/checkout@v3
+    - id: Download-global-json
+      runs: dotnet tool restore
+    - id: Test dotnet-file
+      runs: dotnet-file add "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg"
+    - id Check the file downloaded successfully
+      runs: if [ -F Alan_Turing_Aged_16.jpg ]; then return 0; else return -1;
