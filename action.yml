@@ -11,4 +11,4 @@ runs:
     - uses: actions/checkout@v3
     - id: Download-global-json
       shell: bash
-      run: dotnet tool install dotnet-file --create-manifest-if-needed
+      run: dotnet tool install -g dotnet-file 
