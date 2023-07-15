@@ -31,4 +31,5 @@ jobs:
       
       - name: Ensure dotnet-file is installed
         shell: bash
-        run: if [ -Z $(which dotnet-file | grep dotnet-file) ]; then return -1; fi
+        run: if [ -Z $(which dotnet-file | grep dotnet-file) ]; then return -1; fi;
+        
