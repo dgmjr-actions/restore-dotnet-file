@@ -8,7 +8,7 @@ branding:
 runs:
   using: composite
   steps: 
-   - id: Restore dotnet-file
+    - uses: actions/checkout@v3
+    - id: Download-global-json
       shell: bash
-      run: dotnet install dotnet-file
-
+      run: dotnet tool restore
