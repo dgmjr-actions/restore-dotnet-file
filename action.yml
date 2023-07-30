@@ -2,20 +2,19 @@ name: Restore the dotnet-file tool
 author: David G. Moore, Jr., <david@dgmjr.io>
 description: Restores the dotnet-file tool
 branding:
-   icon: file-plus
-   color: green
+  icon: file-plus
+  color: green
 
 runs:
   using: composite
-  steps: 
+  steps:
     - id: Ensure-dotnet-file-exists
-    shell: bash
-    run: |-
-        dotnetFileExists = $(dotnet tool list --global|grep dotnet-file);
-        echo "Dotnet-file exists: $dotnetFileExists";
-        if [ -Z $dotnetFileExists ]
-            then 
-                dotnet tool update --global dotnet-file 
-            else
-                dotnet tool install --global dotnet-file 
+      shell: bash
+      run: |
+        dotnetFileExists=$(dotnet tool list --global | grep dotnet-file)
+        echo "Dotnet-file exists: $dotnetFileExists"
+        if [ -z "$dotnetFileExists" ]; then
+          dotnet tool update --global dotnet-file
+        else
+          dotnet tool install --global dotnet-file
         fi
