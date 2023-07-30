@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - name: Call the action
+      # Runs a single command using the runners shell
+      - name: Run dotnet-file-restore
         uses: dgmjr-actions/restore-dotnet-file@main
-      - name: Check to make sure the file is there
+      
+      - name: Ensure dotnet-file is installed
         shell: bash
-        run: if [ -z $(dotnet tool list --global|grep dotnet-file) ]; then exit 1; fi;
+        run: if [ -z $(which dotnet-file | grep dotnet-file) ]; then exit 1; fi;
