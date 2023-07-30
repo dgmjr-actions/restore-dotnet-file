@@ -9,5 +9,5 @@ runs:
   using: composite
   steps: 
     - id: Ensure-DotNet-File-Is-Installed
-    - run: ./scrips/ensure-dotnet-file-is-installed.sh
-      shell: bash
+    run: ./scrips/ensure-dotnet-file-is-installed.sh
+    shell: bash
