@@ -1,4 +1,4 @@
-name: Restore the dotnet-file tool
+name: Restore dotnet-file
 author: David G. Moore, Jr., <david@dgmjr.io>
 description: Restores the dotnet-file tool
 branding:
@@ -7,14 +7,8 @@ branding:
 
 runs:
   using: composite
-  steps:
-    - id: Ensure-dotnet-file-exists
+  steps: 
+    - uses: actions/checkout@v3
+    - id: Restore dotnet-file
       shell: bash
-      run: |
-        dotnetFileExists=$(dotnet tool list --global | grep dotnet-file)
-        echo "Dotnet-file exists: $dotnetFileExists"
-        if [ -z "$dotnetFileExists" ]; then
-          dotnet tool update --global dotnet-file
-        else
-          dotnet tool install --global dotnet-file
-        fi
+      run: dotnet tool install -g dotnet-file 
