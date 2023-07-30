@@ -8,6 +8,6 @@ branding:
 runs:
   using: composite
   steps: 
-    - id: Ensure-DotNet-File-Is-Installed
-    run: ./scrips/ensure-dotnet-file-is-installed.sh
-    shell: bash
+     - id: Ensure-dotnet-file-is-installed
+       run: ./scrips/ensure-dotnet-file-is-installed.sh
+       shell: bash
