@@ -8,6 +8,7 @@ branding:
 runs:
   using: composite
   steps: 
+    -id: Ensure-dotnet-file-exists
     run: |
       set dotnetFileExists = $(dotnet tool list --global|grep dotnet-file);
       echo "Dotnet-file exists: $dotnetFileExists";
