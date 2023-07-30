@@ -1,8 +1,8 @@
 ---
-title: Download `global.json`
+title: Restore `dotnet-file`
 authors:
   - dgmjr
-description: Restores the `global.json` tool
+description: Restores the `dotnet-file` global tool.
 keywords:
   - github actions
   - ci/cd
@@ -13,6 +13,6 @@ license: MIT
 date: 2023-06-09T02:44:44.494Z
 lastmod: 2023-06-09T02:44:49.731Z
 ---
-# Download `global.json`
+# Restore `dotnet-file`
 
-Restores the `global.json` file.
+Restores the `dotnet-file` global tool.
