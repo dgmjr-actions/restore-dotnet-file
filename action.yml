@@ -1,13 +1,14 @@
 name: Restore dotnet-file
 author: David G. Moore, Jr., <david@dgmjr.io>
 description: Restores the dotnet-file tool
+
 branding:
   icon: file-plus
   color: green
 
 runs:
   using: composite
-  steps: 
+  steps:
     - id: Restore-dotnet-file
       shell: bash
-      run: dotnet tool update -g dotnet-file 
+      run: dotnet tool update -g dotnet-file
