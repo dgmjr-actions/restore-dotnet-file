@@ -11,4 +11,4 @@ runs:
   steps:
     - id: Restore-dotnet-file
       shell: bash
-      run: dotnet tool update -g dotnet-file
+      run: ./scripts/ensure-dotnet-file-is-installed.sh
